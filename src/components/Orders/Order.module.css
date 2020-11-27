@@ -1,0 +1,20 @@
+.Order p{
+    border: 1px solid #eee;
+    box-shadow: 0 2px 2px #ccc;
+    width: 80%;
+    box-sizing: border-box;
+    margin: 10px auto;
+    animation: focus 1s linear;
+}
+
+@keyframes focus{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
