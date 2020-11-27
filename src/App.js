@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react'
+import Layout from './components/layout/layout'
+import BurgerBuilder from './components/BurgerBuilder/BurgerBuilder'
+import {Route, Switch} from 'react-router-dom'
+import AsyncComponent from './hoc/AsyncComponent/AsyncComponent'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const AsyncCheckout = AsyncComponent (() => {
+  return import ('./containers/Checkout/Checkout')
+})
+
+
+const AsyncOrder = AsyncComponent (() => {
+  return import ('./containers/Orders/Orders')
+})
+
+class App extends Component {
+  render(){
+    return(
+      <div>
+        <Layout>
+          <Switch>
+            <Route path='/Checkout' component={AsyncCheckout}/>
+            <Route path='/Orders' component={AsyncOrder}/>
+            <Route path='/' exact component={BurgerBuilder}/>
+          </Switch>
+        </Layout>
+      </div>
+    );
+  }
 }
 
-export default App;
+export default App;;
