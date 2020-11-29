@@ -4,7 +4,7 @@ import Logo from '../../Logo/Logo'
 import NavigationItems from '../NavigationItems/NavigationItems'
 import DrawerToggle from '../SideDrawer/DrawerToggle/DrawerToggle'
 
-const ToolBar = props => {
+const ToolBar = props => (
     <header className={classes.ToolBar}>
         <DrawerToggle clicked={props.drawerToggleClicked}/>
         <div className={classes.Logo}>
@@ -14,6 +14,6 @@ const ToolBar = props => {
             <NavigationItems/>
         </nav>
     </header>
-}
+)
 
 export default ToolBar
