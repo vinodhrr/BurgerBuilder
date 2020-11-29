@@ -11,11 +11,13 @@ import {connect} from 'react-redux'
 import * as action from  '../../stores/actions/index'
 
 class BurgerBuilder extends Component{
+
     state={
         purchasing : false
     }
 
     componentDidMount(){
+        console.log("componentDidMount in BurgerBuilder")
         this.props.onInitIngredients()
         // console.log(this.props)
         // axios.get('https://react-burger-90e40.firebaseio.com/ingredients.json')
@@ -92,7 +94,7 @@ class BurgerBuilder extends Component{
         for(let i in disableinfo){
             disableinfo[i]=disableinfo[i]<=0;
         }
-        let OrderSummary = null;
+        let orderSummary = null;
         let burger = this.props.error ? "Ingredients can't be loaded for now" : <Spinner/>
         if(this.props.ing)
         {
@@ -105,7 +107,7 @@ class BurgerBuilder extends Component{
             totalPrice={this.props.totalPrice.toFixed(2)}
             ordered={this.purchaseHandler}/></div></Auxillary>)
 
-            OrderSummary=<OrderSummary
+            orderSummary=<OrderSummary
             ingredients={this.props.ing}
             purchaseCancelled={this.purchaseCancelHandler}
             purchaseContinued={this.props.purchaseContinueHandler}
@@ -115,7 +117,7 @@ class BurgerBuilder extends Component{
         return(
             <Auxillary>
                 <Modal show={this.state.purchasing} modalClosed = {this.purchaseCancelHandler}>
-                    {OrderSummary}
+                    {orderSummary}
                 </Modal>
                 {burger}
             </Auxillary>

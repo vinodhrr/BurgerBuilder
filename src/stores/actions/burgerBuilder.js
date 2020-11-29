@@ -43,7 +43,7 @@ export const fetchBasePriceFailed = ingredients => {
 
 export const initIngredient = name => {
     return dispatch => {
-        axios.get('https://react-buger=90e40.firebaseio.com/ingredients.json')
+        axios.get('https://react-burger-90e40.firebaseio.com/ingredients.json')
         .then(response => {
             console.log("server response...", response.data)
             dispatch(setIngredient(response.data))
@@ -54,7 +54,7 @@ export const initIngredient = name => {
             dispatch(fetchIngredientFailed());
         });
 
-        axios.get('https://react-buger=90e40.firebaseio.com/basePrice.json')
+        axios.get('https://react-burger-90e40.firebaseio.com/basePrice.json')
         .then(response => {
             dispatch(setBasePrice(response.data))
         })
