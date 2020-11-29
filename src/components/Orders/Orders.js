@@ -3,7 +3,8 @@ import Order from './Order'
 import axios from '../../axios'
 import {connect} from 'react-redux'
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler'
-import { fetchOrders } from '../UI/Spinner/Spinner'
+import { fetchOrders } from '../../stores/actions/index'
+import Spinner from '../UI/Spinner/Spinner'
 
 class Orders extends Component{
     componentDidMount(){

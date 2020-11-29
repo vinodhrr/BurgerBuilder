@@ -7,11 +7,11 @@ const Input = props => {
     let validationError = null;
     inputStyleArray.push( classes.InputElement)
     if(!props.isValid && props.shouldValidate && props.touched){
-        InputStyleArray.push(classes.Invalid)
+        inputStyleArray.push(classes.Invalid)
         validationError=<p className={classes.ValidationError}>value to {props.field} is Invalid</p>
     }
 
-    let InputStyle=InputStyleArray.join(' ')
+    let InputStyle=inputStyleArray.join(' ')
     switch(props.elementType){
         case 'input' :  inputElement = <input 
                                         className={InputStyle}

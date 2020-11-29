@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Layout from './components/layout/layout'
+import Layout from './components/layout/Layout'
 import BurgerBuilder from './components/BurgerBuilder/BurgerBuilder'
 import {Route, Switch} from 'react-router-dom'
 import AsyncComponent from './hoc/AsyncComponent/AsyncComponent'
@@ -10,7 +10,7 @@ const AsyncCheckout = AsyncComponent (() => {
 
 
 const AsyncOrder = AsyncComponent (() => {
-  return import ('./containers/Orders/Orders')
+  return import ('./components/Orders/Orders')
 })
 
 class App extends Component {

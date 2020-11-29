@@ -1,13 +1,13 @@
 import React from 'react'
 import classes from './BuildControls.module.css'
-import BuildControls from './BuildControl/BuildControl'
+import BuildControl from './BuildControl/BuildControl'
 
 const control = [
-    {label:"lettuce", type:"lettuce"},
+    {label:"Lettuce", type:"lettuce"},
     {label:"Tomato", type:"tomato"},
     {label:"Onion", type:"onion"},
     {label:"Cheese", type:"cheese"},
-    {label:"Beef", type="beef"}
+    {label:"Beef", type:"beef"}
 ]
 
 const BuildControls = props => {

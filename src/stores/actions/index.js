@@ -2,7 +2,7 @@ export {
     addIngredient,
     removeIngredient,
     initIngredient,
-    setBasePrce,
+    setBasePrice,
     fetchBasePriceFailed
 } from './burgerBuilder'
 

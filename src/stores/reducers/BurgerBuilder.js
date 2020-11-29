@@ -44,7 +44,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.FETCH_INGREDIENT_FAILED:
             return{
                 ...state,
-                error : error
+                error : true
             }
         case actionTypes.SET_BASE_PRICE:
             return{
@@ -54,7 +54,7 @@ const reducer = (state = initialState, action) => {
         case actionTypes.FECTH_BASE_PRICE_FAILED:
             return{
                 ...state,
-                error : error
+                error : true
             }
     }
     return state

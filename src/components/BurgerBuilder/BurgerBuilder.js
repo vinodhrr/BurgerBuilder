@@ -105,7 +105,7 @@ class BurgerBuilder extends Component{
             totalPrice={this.props.totalPrice.toFixed(2)}
             ordered={this.purchaseHandler}/></div></Auxillary>)
 
-            orderSummary=<OrderSummary
+            OrderSummary=<OrderSummary
             ingredients={this.props.ing}
             purchaseCancelled={this.purchaseCancelHandler}
             purchaseContinued={this.props.purchaseContinueHandler}
@@ -115,7 +115,7 @@ class BurgerBuilder extends Component{
         return(
             <Auxillary>
                 <Modal show={this.state.purchasing} modalClosed = {this.purchaseCancelHandler}>
-                    {orderSummary}
+                    {OrderSummary}
                 </Modal>
                 {burger}
             </Auxillary>
