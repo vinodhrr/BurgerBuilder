@@ -9,6 +9,7 @@ import Spinner from '../UI/Spinner/Spinner'
 import withErrorHandler from '../../hoc/withErrorHandler/withErrorHandler'
 import {connect} from 'react-redux'
 import * as action from  '../../stores/actions/index'
+import {withRouter} from 'react-router-dom'
 
 class BurgerBuilder extends Component{
 
@@ -75,6 +76,7 @@ class BurgerBuilder extends Component{
         this.setState({purchasing : false});
     }
     purchaseContinueHandler = () => {
+        console.log("purchaseContinueHandler clicked")
         // const queryParams = []
         // for(let i in this.state.ingredients){
         //     queryParams.push(encodeURIComponent(i) + "=" +encodeURIComponent(this.state.ingredients[i]))
@@ -110,7 +112,7 @@ class BurgerBuilder extends Component{
             orderSummary=<OrderSummary
             ingredients={this.props.ing}
             purchaseCancelled={this.purchaseCancelHandler}
-            purchaseContinued={this.props.purchaseContinueHandler}
+            purchaseContinued={this.purchaseContinueHandler}
             price={this.props.totalPrice}
             />
         }
@@ -143,4 +145,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(withErrorHandler(BurgerBuilder,axios));
+export default connect(mapStateToProps,mapDispatchToProps)(withErrorHandler(withRouter(BurgerBuilder),axios));

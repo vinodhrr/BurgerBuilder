@@ -3,10 +3,11 @@ import Auxillary from '../../../hoc/Auxillary'
 import Button from '../../UI/Button/Button'
 
 const OrderSummary = props => {
+    console.log("ordersummary : ",props)
     const ingredientSummary = Object.keys(props.ingredients)
         .map((igkeys) => {
             return(<li key={igkeys}>
-                <span style={{textTransform : "capitalize"}}>{igkeys}:</span>{props.iningredients[igkeys]}
+                <span style={{textTransform : "capitalize"}}>{igkeys}:</span>{props.ingredients[igkeys]}
             </li>);
         })
     // useEffect(()=>{
