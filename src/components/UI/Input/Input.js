@@ -5,6 +5,7 @@ const Input = props => {
     let inputElement = null;
     let inputStyleArray = [];
     let validationError = null;
+    console.log(props.elementConfig.options)
     inputStyleArray.push( classes.InputElement)
     if(!props.isValid && props.shouldValidate && props.touched){
         inputStyleArray.push(classes.Invalid)
@@ -23,17 +24,18 @@ const Input = props => {
                                         onChange={props.changed}
                                         {...props.elementConfig}/>
                                         break;
-        case 'input' :  inputElement = (<select 
+        case 'select' :  inputElement = (<select 
                                         className={InputStyle}
-                                        onChange={props.changed}
-                                        {...props.elementConfig.option.map(option => (
+                                        onChange={props.changed}>
+                                        {props.elementConfig.options.map(option => (
                                             <option
                                             key={option.value}
                                             value={option.value}
                                             >
                                                 {option.displayValue}
                                             </option>
-                                        ))}></select>)
+                                        ))}
+                                        </select>)
                                         break;
         default :  inputElement = <input 
                                         className={InputStyle}
@@ -42,7 +44,7 @@ const Input = props => {
     }
     return(<div 
         className={classes.Input}>
-            <label className={classes.label}>{inputElement}</label>
+            <label className={classes.label}>{inputElement}  {validationError}</label>
         </div>)
 }
 

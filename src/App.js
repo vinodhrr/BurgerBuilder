@@ -23,10 +23,10 @@ class App extends Component {
             <Route path="/Orders" component={AsyncOrder}/>
             <Route path="/" exact component={BurgerBuilder}/>
           </Switch>
-        </Layout>
+          </Layout>
       </div>
     );
   }
 }
 
-export default App;;
+export default App;

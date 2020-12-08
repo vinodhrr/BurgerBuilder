@@ -3,6 +3,7 @@ import Auxillary from '../../hoc/Auxillary'
 import * as  classes from './layout.module.css'
 import ToolBar from '../Navigation/Toolbar/Toolbar'
 import SideDrawer from '../Navigation/SideDrawer/SideDrawer'
+import {withRouter} from 'react-router-dom'
 
 class Layout extends Component {
     constructor(props){
@@ -25,11 +26,11 @@ class Layout extends Component {
             <ToolBar drawerToggleClicked={this.sideDrawerToggleHandler}/>
             <SideDrawer open={this.state.showSideDrawer} closed={this.sideDrawerHandler}/>
             <main className={classes.Content}>
-                {this.props.Children}
+                {this.props.children}
             </main>
             </Auxillary>
         );
     }
 }
 
-export default Layout;
+export default Layout

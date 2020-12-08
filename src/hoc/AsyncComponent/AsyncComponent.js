@@ -8,13 +8,19 @@ export default function AsyncComponent(importComponent){
         }
 
         componentDidMount(){
-            this.setState({
-                component : importComponent.default
+            importComponent()
+            .then(cmp => {
+                this.setState({
+                    component : cmp.default
+                });
             });
+            
         }
 
         render(){
             const C = this.state.component;
+            
+            C != null ? console.log(C) : console.log()
             return(
                 C != null ? <C {...this.props}/> : null
             )
