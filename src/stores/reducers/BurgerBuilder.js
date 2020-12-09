@@ -51,7 +51,7 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 totalPrice : action.totalPrice
             }
-        case actionTypes.FECTH_BASE_PRICE_FAILED:
+        case actionTypes.FETCH_BASE_PRICE_FAILED:
             return{
                 ...state,
                 error : true

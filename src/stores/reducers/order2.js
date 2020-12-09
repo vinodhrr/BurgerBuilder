@@ -29,7 +29,7 @@ const order2 = (state = initialState, action) => {
             return{
                 ...state,
                 order : state.order.concat(newOrder),
-                loaing : false,
+                loading : false,
                 purchased : true
             }
         case actionTypes.PURCHASE_BURGER_FAIL :
@@ -37,7 +37,7 @@ const order2 = (state = initialState, action) => {
                 ...state,
                 loading : false
             }
-        case actionTypes.FECTH_ORDERS_START :
+        case actionTypes.FETCH_ORDERS_START :
             return{
                 ...state,
                 loading : true

@@ -37,7 +37,7 @@ export const setBasePrice = basePrice => {
 
 export const fetchBasePriceFailed = ingredients => {
     return{
-        type : actionTypes.FECTH_BASE_PRICE_FAILED
+        type : actionTypes.FETCH_BASE_PRICE_FAILED
     }
 }
 

@@ -62,7 +62,7 @@ class ContactData extends React.Component{
                 validation : {
                     required : true
                 },
-                valid : false,
+                valid : true,
                 value : "Cheapest"
             }
         },
@@ -107,12 +107,15 @@ class ContactData extends React.Component{
         updatedOrderForm[inputIdentifier] = updatedOrderInnerForm
         let isFormValid = true;
         for(let i in updatedOrderForm){
+            console.log("i", i)
+            console.log("updatedOrderForm[i].valid" + updatedOrderForm[i].valid)
             isFormValid = updatedOrderForm[i].valid && isFormValid
         }
         this.setState({orderForm : updatedOrderForm, isFormValid : isFormValid})
     }
     render(){
         console.log("contactData :: loading", this.props.loading)
+        console.log("contactData :: props ", this.props)
         let formElements = [];
         for(let key in this.state.orderForm){
             formElements.push({
@@ -151,7 +154,7 @@ class ContactData extends React.Component{
 const mapStateToProps = state => {
     return{
         ing : state.burgerBuilder.ingredients,
-        price : state.burgerBuilder.price,
+        price : state.burgerBuilder.totalPrice,
         loading : state.order.loading
     }
 }
